@@ -113,11 +113,13 @@ h1, h2, h3 {
   padding: 4rem 1rem;
 }
 
-
-.invitacion-section,
-
 .vestimenta-section {
   background-color: #345852;
+  color: var(--dorado);
+}
+
+.invitacion-section{
+  background-color: var(--verde-esmeralda);
   color: white;
 }
 
@@ -139,7 +141,7 @@ h1, h2, h3 {
   background-color: #345852;
   color: white;
   font-style: italic;
-  font-family: 'Great Vibes';
+  font-family: 'Brush Script MT';
   font-size: 1.5em; 
 }
 
@@ -153,6 +155,10 @@ h1, h2, h3 {
 .frase-final-section img {
   max-width: 90%;
   border-radius: 20px;
+}
+
+.vestimenta-section img{
+  margin-top: -30px;
 }
 
 section img {
@@ -189,19 +195,51 @@ section img {
   font-weight: bold;
 }
 
-.invitacion-section h2,
-.vestimenta-section h3 {
+.invitacion-section h2{
   color: var(--dorado);
 }
 
+
+.vestimenta-section h3 {
+  color: white;
+}
+
+.invitacion-section #separador {
+  margin-top: -80px;
+  margin-bottom: -20px;
+
+}
+
+
+.ceremonia-section #separador2 {
+  margin-bottom: -150px;
+}
+
+
+.vestimenta-section #separador3{
+  margin-top: -20px;
+  margin-bottom: -80px;
+}
+
+.ceremonia-section img{
+  margin-top: -50px;
+}
+
+
+
 .padres-section h3,
-.invitacion-section h3,
 .ceremonia-section h2,
 .celebracion-section h2,
 .vestimenta-section h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
 }
+
+.invitacion-section h3{
+  font-family: 'MV Boli';
+  font-size: 1.8rem;
+}
+
 
 .itinerario-section {
   background-color: var(--verde-esmeralda);
