@@ -1,0 +1,430 @@
+:root {
+  --verde-esmeralda: #103b34;
+  --dorado: #d4c198;
+  --blanco: #ffffff;
+  --acento-azul: #00ffe1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--blanco);
+  color: var(--verde-esmeralda);
+  line-height: 1.6;  
+}
+
+section {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.hero {
+  background: url('../assets/fondo.jpg') center/cover no-repeat;
+  color: white;
+  padding: 5rem 1rem 6rem;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  color: var(--dorado);
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+}
+
+.hero img {
+  width: 50px;
+  height: 50px;
+  margin-top: 1rem;
+}
+
+
+/* Countdown */
+.countdown-section {
+  background-color: var(--verde-esmeralda);
+  color: var(--dorado);
+}
+
+.countdown-section h2 {
+  font-size: 2.5rem;
+}
+
+.countdown-section img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.countdown-item {
+  border: 2px solid var(--dorado);
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  min-width: 100px;
+}
+
+.countdown-item span {
+  font-size: 2.2rem;
+  color: var(--blanco);
+}
+
+.countdown-item small {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--dorado);
+}
+
+/* Secciones comunes */
+.padres-section,
+.invitacion-section,
+.vestimenta-section,
+.hospedaje-section,
+.frase-final-section,
+.ceremonia-section,
+.celebracion-section {
+  padding: 4rem 1rem;
+}
+
+
+.invitacion-section,
+
+.vestimenta-section {
+  background-color: #345852;
+  color: white;
+}
+
+.ceremonia-section,
+.celebracion-section,
+.padres-section{
+ background-color: #345852;
+  color: var(--dorado);
+}
+
+
+
+.hospedaje-section {
+  background-color: #103b34;
+  color: white;
+}
+
+.frase-final-section {
+  background-color: #345852;
+  color: white;
+  font-style: italic;
+  font-family: 'Great Vibes';
+  font-size: 1.5em; 
+}
+
+.ceremonia-section h2,
+.celebracion-section h2 {
+  color: white;
+}
+
+.vestimenta-section img,
+.hospedaje-section img,
+.frase-final-section img {
+  max-width: 90%;
+  border-radius: 20px;
+}
+
+section img {
+  max-width: 90%;
+  height: auto;
+  margin: 1rem auto;
+  /*border-radius: 50%;*/
+}
+
+.ceremonia-section div,
+.celebracion-section div {
+  background-color: #103b34;
+  padding: 1rem;
+  border-radius: 30px;
+  width: 120px;
+  margin: 1.5rem auto;
+}
+
+.ceremonia-section a,
+.celebracion-section a,
+.hospedaje-section a {
+  display: inline-block;
+  background-color: #103b34;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.hospedaje-section a {
+  background-color: white;
+  color: #103b34;
+  font-weight: bold;
+}
+
+.invitacion-section h2,
+.vestimenta-section h3 {
+  color: var(--dorado);
+}
+
+.padres-section h3,
+.invitacion-section h3,
+.ceremonia-section h2,
+.celebracion-section h2,
+.vestimenta-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+}
+
+.itinerario-section {
+  background-color: var(--verde-esmeralda);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.itinerario-section h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.itinerario-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.itinerario-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.itinerario-item img {
+  width: 60px;
+  height: 60px;
+object-fit: contain;   /* No recorta la imagen */
+  border-radius: 0;       /* Sin borde redondeado */
+}
+
+.texto-itinerario h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+}
+
+.texto-itinerario p {
+  font-size: 1.1rem;
+  color: #d4c198;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .itinerario-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .itinerario-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .texto-itinerario h3 {
+    font-size: 1.2rem;
+  }
+
+  .texto-itinerario p {
+    font-size: 1rem;
+  }
+}
+
+
+/* Media Queries para Responsividad */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .countdown-section h2 {
+    font-size: 2rem;
+  }
+  .countdown-item {
+    min-width: 90px;
+    padding: 1rem;
+  }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .countdown-item span {
+    font-size: 1.6rem;
+  }
+
+  .countdown-item small {
+    font-size: 0.8rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+.galeria-section{
+  background-color: var(--verde-esmeralda);
+  color: var(--blanco);
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-color: #345852;
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(200% + 1rem);
+  animation: scrollCarousel 40s linear infinite;
+}
+
+.carousel-track img {
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scrollCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.modal-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  transform: translateY(-50%);
+}
+
+.modal-controls button {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.modal-controls button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-track img {
+    height: 100px;
+  }
+
+  .modal-controls button {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
