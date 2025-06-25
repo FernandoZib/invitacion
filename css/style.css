@@ -26,6 +26,7 @@ section {
 
 p{
   font-size: 1.5rem;
+  font-family: "Garamond";
 }
 
 h1, h2, h3 {
@@ -145,7 +146,7 @@ h1, h2, h3 {
   background-color: #345852;
   color: white;
   font-style: italic;
-  font-family: 'Brush Script MT';
+  font-family: 'IM Fell Great Primer';
   font-size: 1.5em; 
 }
 
@@ -249,8 +250,8 @@ section img {
 }
 
 .invitacion-section h3{
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-family: 'Ballet';
+  font-size: 3.5rem;
 }
 
 
