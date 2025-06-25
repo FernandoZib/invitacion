@@ -24,6 +24,10 @@ section {
   text-align: center;
 }
 
+p{
+  font-size: 1.5rem;
+}
+
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   margin-bottom: 1rem;
@@ -205,7 +209,7 @@ section img {
 }
 
 .invitacion-section #separador {
-  margin-top: -80px;
+  margin-top: -60px;
   margin-bottom: -20px;
 
 }
@@ -223,20 +227,29 @@ section img {
 
 .ceremonia-section img{
   margin-top: -50px;
+  border-radius: 30px;
 }
 
+.celebracion-section img{
+  border-radius: 30px;
 
+}
+
+#bordes{
+  border-style: solid;
+  border-color: black;
+}
 
 .padres-section h3,
 .ceremonia-section h2,
 .celebracion-section h2,
 .vestimenta-section h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
 }
 
 .invitacion-section h3{
-  font-family: 'MV Boli';
+  font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
 }
 
