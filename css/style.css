@@ -11,12 +11,11 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--blanco);
   color: var(--verde-esmeralda);
-  line-height: 1.6;  
+  line-height: 1.6;
 }
 
 section {
@@ -24,8 +23,8 @@ section {
   text-align: center;
 }
 
-p{
-  font-size: 1.5rem;
+p {
+  font-size: 1.8rem;
   font-family: "EB Garamond", serif;
 }
 
@@ -35,6 +34,7 @@ h1, h2, h3 {
   text-align: center;
 }
 
+/* HERO */
 .hero {
   background: url('../assets/fondo.jpg') center/cover no-repeat;
   color: white;
@@ -64,8 +64,7 @@ h1, h2, h3 {
   margin-top: 1rem;
 }
 
-
-/* Countdown */
+/* COUNTDOWN */
 .countdown-section {
   background-color: var(--verde-esmeralda);
   color: var(--dorado);
@@ -75,39 +74,44 @@ h1, h2, h3 {
   font-size: 2.5rem;
 }
 
-.countdown-section img {
-  width: 100%;
-  height: 100%;
-
-}
-
 .countdown {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  align-items: center;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  border: 4px solid var(--dorado);
+  border-radius: 2rem;
+  max-width: 800px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.countdown::-webkit-scrollbar {
+  display: none;
 }
 
 .countdown-item {
-  border: 2px solid var(--dorado);
-  border-radius: 20px;
-  padding: 1rem 1.5rem;
-  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
 }
 
 .countdown-item span {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   color: var(--blanco);
 }
 
 .countdown-item small {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: var(--dorado);
+  margin-top: 0.5rem;
 }
 
-/* Secciones comunes */
+/* SECCIONES */
 .padres-section,
 .invitacion-section,
 .vestimenta-section,
@@ -118,28 +122,56 @@ h1, h2, h3 {
   padding: 4rem 1rem;
 }
 
+
+
+.padres-section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--verde-esmeralda);
+}
+
+.padres-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../assets/padres-fondo.webp') center/cover no-repeat;
+  filter: brightness(0.5); /* 0.5 = más oscuro, 1 = normal, 1.5 = más brillante */
+  z-index: -1;
+
+}
+
+
+#padres-titulos{
+ color: var(--dorado);
+ text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#padres-frase{
+ color: var(--dorado);
+
+}
+
 .vestimenta-section {
   background-color: #345852;
   color: var(--dorado);
 }
 
-.invitacion-section{
+.invitacion-section {
   background-color: var(--verde-esmeralda);
   color: white;
 }
 
 .ceremonia-section,
-.celebracion-section,
-.padres-section{
- background-color: #345852;
+.celebracion-section {
+  background-color: #345852;
   color: var(--dorado);
 }
-
-
 
 .hospedaje-section {
   background-color: #103b34;
   color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .frase-final-section {
@@ -147,7 +179,7 @@ h1, h2, h3 {
   color: white;
   font-style: italic;
   font-family: "IM Fell Great Primer", serif;
-  font-size: 1.5em; 
+  font-size: 1.5em;
 }
 
 .ceremonia-section h2,
@@ -156,21 +188,28 @@ h1, h2, h3 {
 }
 
 .vestimenta-section img,
-.hospedaje-section img,
 .frase-final-section img {
-  max-width: 90%;
+  max-width: 100%;
   border-radius: 20px;
 }
 
-.vestimenta-section img{
+.vestimenta-section img {
   margin-top: -30px;
+}
+
+.hospedaje-section img{
+  max-width: 50%;
+}
+
+.hospedaje-section h3{
+  color: var(--dorado);
+  font-size: 2em;
 }
 
 section img {
   max-width: 90%;
   height: auto;
   margin: 1rem auto;
-  /*border-radius: 50%;*/
 }
 
 .ceremonia-section div,
@@ -178,8 +217,9 @@ section img {
   background-color: #103b34;
   padding: 1rem;
   border-radius: 30px;
-  width: 120px;
+  width: 220px;
   margin: 1.5rem auto;
+  font-size: 1.5em;
 }
 
 .ceremonia-section a,
@@ -192,6 +232,8 @@ section img {
   border-radius: 25px;
   text-decoration: none;
   margin-top: 1rem;
+  width: 220px;
+  font-size: 1.5em;
 }
 
 .hospedaje-section a {
@@ -200,10 +242,9 @@ section img {
   font-weight: bold;
 }
 
-.invitacion-section h2{
+.invitacion-section h2 {
   color: var(--dorado);
 }
-
 
 .vestimenta-section h3 {
   color: white;
@@ -212,31 +253,27 @@ section img {
 .invitacion-section #separador {
   margin-top: -60px;
   margin-bottom: -20px;
-
 }
-
 
 .ceremonia-section #separador2 {
   margin-bottom: -150px;
 }
 
-
-.vestimenta-section #separador3{
+.vestimenta-section #separador3 {
   margin-top: -20px;
   margin-bottom: -80px;
 }
 
-.ceremonia-section img{
+.ceremonia-section img {
   margin-top: -50px;
   border-radius: 30px;
 }
 
-.celebracion-section img{
+.celebracion-section img {
   border-radius: 30px;
-
 }
 
-#bordes{
+#bordes {
   border-style: solid;
   border-color: black;
 }
@@ -249,12 +286,12 @@ section img {
   font-size: 2.5rem;
 }
 
-.invitacion-section h3{
+.invitacion-section h3 {
   font-family: 'Ballet';
   font-size: 3.5rem;
 }
 
-
+/* ITINERARIO */
 .itinerario-section {
   background-color: var(--verde-esmeralda);
   color: white;
@@ -275,23 +312,34 @@ section img {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .itinerario-item {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.15);
+  /*background-color: rgba(255, 255, 255, 0.15);*/
   padding: 1rem;
   border-radius: 15px;
   text-align: left;
 }
 
+
+
 .itinerario-item img {
-  width: 60px;
-  height: 60px;
-object-fit: contain;   /* No recorta la imagen */
-  border-radius: 0;       /* Sin borde redondeado */
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain;
+  border-radius: 0;
+  margin-left: 15%;
+}
+
+.texto-itinerario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .texto-itinerario h3 {
@@ -302,36 +350,16 @@ object-fit: contain;   /* No recorta la imagen */
 }
 
 .texto-itinerario p {
-  font-size: 1.1rem;
+  font-size: 1.5rem !important;
   color: #d4c198;
+  margin-top: 0.2rem;
 }
 
-/* Responsivo para móviles */
-@media (max-width: 768px) {
-  .itinerario-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .itinerario-item img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .texto-itinerario h3 {
-    font-size: 1.2rem;
-  }
-
-  .texto-itinerario p {
-    font-size: 1rem;
-  }
+#textoit {
+  font-size: 1rem !important;
 }
 
-
-/* Media Queries para Responsividad */
-
-/* Tablet */
+/* RESPONSIVE GENERAL */
 @media (max-width: 1024px) {
   .hero h1 {
     font-size: 2.5rem;
@@ -339,13 +367,8 @@ object-fit: contain;   /* No recorta la imagen */
   .countdown-section h2 {
     font-size: 2rem;
   }
-  .countdown-item {
-    min-width: 90px;
-    padding: 1rem;
-  }
 }
 
-/* Móvil */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
@@ -360,23 +383,62 @@ object-fit: contain;   /* No recorta la imagen */
     padding: 0 1rem;
   }
 
-  .countdown-item span {
-    font-size: 1.6rem;
-  }
-
-  .countdown-item small {
-    font-size: 0.8rem;
-  }
-
   section {
     padding: 2rem 1rem;
   }
 
-.galeria-section{
-  background-color: var(--verde-esmeralda);
-  color: var(--blanco);
+  .countdown {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .countdown-item span {
+    font-size: 2rem;
+  }
+
+  .countdown-item small {
+    font-size: 0.7rem;
+  }
+
+  .itinerario-item {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
+  .itinerario-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .texto-itinerario {
+    flex: 1;
+  }
+
+  .texto-itinerario h3 {
+    font-size: 1rem;
+  }
+
+  .texto-itinerario p {
+    font-size: 0.9rem;
+  }
+
+  .galeria-section {
+    background-color: var(--verde-esmeralda);
+    color: var(--blanco);
+  }
+
+  .carousel-track img {
+    height: 100px;
+  }
+
+  .modal-controls button {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.7rem;
+  }
 }
 
+/* GALERÍA */
 .carousel {
   overflow: hidden;
   position: relative;
@@ -413,7 +475,7 @@ object-fit: contain;   /* No recorta la imagen */
   }
 }
 
-/* Modal */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -425,10 +487,19 @@ object-fit: contain;   /* No recorta la imagen */
   height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+.modal::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .modal-content {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   margin: auto;
   max-width: 90%;
   max-height: 80%;
@@ -467,16 +538,4 @@ object-fit: contain;   /* No recorta la imagen */
 
 .modal-controls button:hover {
   background-color: rgba(255, 255, 255, 0.6);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .carousel-track img {
-    height: 100px;
-  }
-
-  .modal-controls button {
-    font-size: 1.5rem;
-    padding: 0.3rem 0.7rem;
-  }
 }
