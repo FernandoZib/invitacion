@@ -1,9 +1,19 @@
-// Cuenta regresiva a la fecha de la boda: 21 de marzo de 2026
-const targetDate = new Date("2026-03-21T00:00:00").getTime();
+// Cuenta regresiva a la fecha de la boda: 21 de marzo de 2026 a las 7:00 PM (hora local)
+const targetDate = new Date("2026-03-21T19:00:00-06:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
   const distance = targetDate - now;
+
+  if (distance <= 0) {
+    // Opcional: mostrar 0 o un mensaje cuando llegue la fecha
+    document.getElementById("days").innerText = "0";
+    document.getElementById("hours").innerText = "00";
+    document.getElementById("minutes").innerText = "00";
+    document.getElementById("seconds").innerText = "00";
+    clearInterval(countdownInterval);
+    return;
+  }
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -16,9 +26,8 @@ function updateCountdown() {
   document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
 }
 
-setInterval(updateCountdown, 1000);
+const countdownInterval = setInterval(updateCountdown, 1000);
 updateCountdown();
-
 
 // Galería Modal
 const images = [
