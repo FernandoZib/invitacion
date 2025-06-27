@@ -1,2 +1,2 @@
 # invitacion
-Prueba de invitación alojada
+Invitación a nuestra boda
