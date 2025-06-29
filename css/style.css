@@ -75,6 +75,8 @@ h1, h2, h3 {
   font-family: "Eagle Lake", serif;
 }
 
+
+
 .countdown {
   display: flex;
   justify-content: center;
@@ -164,6 +166,10 @@ h1, h2, h3 {
   color: white;
 }
 
+#invitacion-frase{
+   color: var(--dorado);
+}
+
 .ceremonia-section,
 .celebracion-section {
   background-color: #345852;
@@ -209,7 +215,7 @@ h1, h2, h3 {
 }
 
 section img {
-  max-width: 90%;
+  max-width: 100%;
   height: auto;
   margin: 1rem auto;
 }
@@ -245,7 +251,46 @@ section img {
 }
 
 .invitacion-section h2 {
-  color: var(--dorado);
+  color: white;
+}
+
+.invitacion-linea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Espacio entre imagen, texto, imagen */
+    flex-wrap: nowrap;
+    margin: 2rem 0;
+}
+
+.invitacion-linea h3 {
+    font-family: 'Ballet', cursive;
+    font-size: 3rem;
+    color: var(--dorado);
+    white-space: nowrap; /* Evita saltos de línea */
+}
+
+.anillos-linea {
+    width: 30px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .invitacion-linea {
+        flex-wrap: wrap;
+    }
+
+    .invitacion-linea h3 {
+        font-size: 2.5rem;
+    }
+
+    .anillos-linea {
+        width: 30px;
+    }
+}
+
+#anillos {
+  width: 60px;
 }
 
 .vestimenta-section h3 {
@@ -253,12 +298,17 @@ section img {
 }
 
 .invitacion-section #separador {
-  margin-top: -60px;
-  margin-bottom: -20px;
+  margin-top: -130px;
+  margin-bottom: -130px;  
 }
 
 .ceremonia-section #separador2 {
   margin-bottom: -150px;
+}
+
+#separadorinv{
+  margin-top: -130px;
+  margin-bottom: -60px;
 }
 
 .vestimenta-section #separador3 {
@@ -270,6 +320,7 @@ section img {
   margin-top: -50px;
   border-radius: 30px;
 }
+
 
 .celebracion-section img {
   border-radius: 30px;
@@ -290,8 +341,25 @@ section img {
 
 .invitacion-section h3 {
   font-family: 'Ballet';
-  font-size: 3.5rem;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+      text-shadow:
+        -1px -1px 0 #00674F,
+         1px -1px 0 #00674F,
+        -1px  1px 0 #00674F,
+         1px  1px 0 #00674F,
+         0   -1px 0 #00674F,
+        -1px  0   0 #00674F,
+         1px  0   0 #00674F,
+         0    1px 0 #00674F;
 }
+
+
 
 /* ITINERARIO */
 .itinerario-section {
@@ -327,7 +395,10 @@ section img {
   text-align: left;
 }
 
-
+#itinerario{
+  margin-top: -80px;
+  margin-bottom: -40px;
+}
 
 .itinerario-item img {
   width: 100px !important;
@@ -392,6 +463,10 @@ section img {
   .countdown {
     flex-wrap: nowrap;
     overflow-x: auto;
+  }
+
+#noscasamos{
+    margin-bottom: -40px;
   }
 
   .countdown-item span {
