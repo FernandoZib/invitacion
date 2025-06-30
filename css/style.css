@@ -146,6 +146,10 @@ h1, h2, h3 {
 }
 
 
+#decoracion{
+  margin-top: -100px;
+}
+
 #padres-titulos{
  color: var(--dorado);
  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -153,12 +157,13 @@ h1, h2, h3 {
 
 #padres-frase{
  color: var(--dorado);
+ font-size: 2rem;
 
 }
 
 .vestimenta-section {
-  background-color: #345852;
-  color: var(--dorado);
+  background-color: #528370;
+  color: var(--blanco);
 }
 
 .invitacion-section {
@@ -168,11 +173,12 @@ h1, h2, h3 {
 
 #invitacion-frase{
    color: var(--dorado);
+   font-size: 2rem;
 }
 
 .ceremonia-section,
 .celebracion-section {
-  background-color: #345852;
+  background-color: #528370;
   color: var(--dorado);
 }
 
@@ -183,11 +189,22 @@ h1, h2, h3 {
 }
 
 .frase-final-section {
-  background-color: #345852;
+  background-color: #103b34;
   color: white;
-  font-style: italic;
-  font-family: "IM Fell Great Primer", serif;
-  font-size: 1.5em;
+}
+
+.frase-final-section p{
+  font-family: "Great Vibes";
+  font-size: 2em;
+  text-shadow:
+        -1px -1px 0 #00674F,
+         1px -1px 0 #00674F,
+        -1px  1px 0 #00674F,
+         1px  1px 0 #00674F,
+         0   -1px 0 #00674F,
+        -1px  0   0 #00674F,
+         1px  0   0 #00674F,
+         0    1px 0 #00674F;
 }
 
 .ceremonia-section h2,
@@ -206,12 +223,21 @@ h1, h2, h3 {
 }
 
 .hospedaje-section img{
-  max-width: 50%;
+  max-width: 80%;
 }
 
 .hospedaje-section h3{
-  color: var(--dorado);
+  color: var(--blanco);
   font-size: 2em;
+  text-shadow:
+        -1px -1px 0 #00674F,
+         1px -1px 0 #00674F,
+        -1px  1px 0 #00674F,
+         1px  1px 0 #00674F,
+         0   -1px 0 #00674F,
+        -1px  0   0 #00674F,
+         1px  0   0 #00674F,
+         0    1px 0 #00674F;
 }
 
 section img {
@@ -228,6 +254,11 @@ section img {
   width: 220px;
   margin: 1.5rem auto;
   font-size: 1.5em;
+}
+
+.ceremonia-section p,
+.celebracion-section p {
+  color: white;
 }
 
 .ceremonia-section a,
@@ -260,7 +291,9 @@ section img {
     justify-content: center;
     gap: 1rem; /* Espacio entre imagen, texto, imagen */
     flex-wrap: nowrap;
-    margin: 2rem 0;
+    /*margin: 2rem 0;*/
+    margin-bottom: -30px;
+    margin-top: 30px;
 }
 
 .invitacion-linea h3 {
@@ -297,24 +330,26 @@ section img {
   color: white;
 }
 
-.invitacion-section #separador {
-  margin-top: -130px;
-  margin-bottom: -130px;  
+#separador {
+  margin-top: -75px;
+  margin-bottom: -130px;
 }
 
-.ceremonia-section #separador2 {
-  margin-bottom: -150px;
+#separador2 {
+  margin-top: -10px;
+  margin-bottom: -120px;
 }
 
-#separadorinv{
-  margin-top: -130px;
-  margin-bottom: -60px;
+
+#separador3 {
+  margin-top: 10px;
+  margin-bottom: -20px;
 }
 
-.vestimenta-section #separador3 {
-  margin-top: -20px;
-  margin-bottom: -80px;
+#ceremonia{
+  margin-top: 20px;
 }
+
 
 .ceremonia-section img {
   margin-top: -50px;
@@ -381,8 +416,7 @@ section img {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #528370;
 }
 
 .itinerario-item {
@@ -396,8 +430,7 @@ section img {
 }
 
 #itinerario{
-  margin-top: -80px;
-  margin-bottom: -40px;
+  margin-top: -20px;
 }
 
 .itinerario-item img {
@@ -454,6 +487,7 @@ section img {
   .hero p {
     font-size: 1rem;
     padding: 0 1rem;
+    font-size: 1.5rem;
   }
 
   section {
