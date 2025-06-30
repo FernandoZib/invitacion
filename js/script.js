@@ -34,7 +34,8 @@ const images = [
   "assets/galeria1.jpg",
   "assets/galeria2.jpg",
   "assets/galeria3.jpg",
-  "assets/galeria4.jpg"
+  "assets/galeria4.jpg",
+  "assets/galeria5.jpg"
 ];
 
 let currentImageIndex = 0;
