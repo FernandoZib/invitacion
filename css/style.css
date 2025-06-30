@@ -183,12 +183,17 @@ h1, h2, h3 {
 }
 
 .hospedaje-section {
+  background: url('../assets/textura2.png') center no-repeat;
+  background-size: 350px, 1000px;
+  background-position-y: top;
   background-color: #103b34;
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+
 .frase-final-section {
+  background: url('../assets/textura.png') center/cover no-repeat;
   background-color: #103b34;
   color: white;
 }
@@ -196,6 +201,9 @@ h1, h2, h3 {
 .frase-final-section p{
   font-family: "Great Vibes";
   font-size: 2em;
+  max-width: 250px; /* Ajusta el tamaño según lo que desees */
+  margin: 0 auto;   /* Centrar horizontalmente */
+  text-align: center; /* Opcional, centra el texto dentro */
   text-shadow:
         -1px -1px 0 #00674F,
          1px -1px 0 #00674F,
@@ -229,6 +237,8 @@ h1, h2, h3 {
 .hospedaje-section h3{
   color: var(--blanco);
   font-size: 2em;
+  margin-top: -65px;
+  margin-bottom: -10px;
   text-shadow:
         -1px -1px 0 #00674F,
          1px -1px 0 #00674F,
@@ -415,6 +425,7 @@ section img {
   max-width: 800px;
   margin: 0 auto;
   display: flex;
+  border-radius: 50px;
   flex-direction: column;
   background-color: #528370;
 }
