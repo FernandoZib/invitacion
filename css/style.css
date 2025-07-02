@@ -150,6 +150,10 @@ h1, h2, h3 {
   margin-top: -100px;
 }
 
+#decoracion2{
+  margin-bottom: -50px;
+}
+
 #padres-titulos{
  color: var(--dorado);
  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -492,7 +496,8 @@ section img {
   }
 
   .hero h2 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    font-family: "great vibes";
   }
 
   .hero p {
