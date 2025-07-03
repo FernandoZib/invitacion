@@ -666,3 +666,112 @@ section img {
 .modal-controls button:hover {
   background-color: rgba(255, 255, 255, 0.6);
 }
+
+
+/* =======================
+   RESPONSIVE PARA TABLETS
+   ======================= */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Ajustar HERO */
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 80%;
+  }
+
+  .hero img {
+    width: 80px;
+    height: auto;
+  }
+
+  /* Countdown */
+  .countdown {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .countdown-item span {
+    font-size: 2.2rem;
+  }
+
+  .countdown-item small {
+    font-size: 0.9rem;
+  }
+
+  /* Secciones generales */
+  section {
+    padding: 3rem 1.5rem;
+  }
+
+  /* Invitación */
+  .invitacion-linea h3 {
+    font-size: 2.5rem;
+  }
+
+  .anillos-linea {
+    width: 40px;
+  }
+
+  #invitacion-frase {
+    font-size: 1.8rem;
+  }
+
+  #padres-frase {
+    font-size: 1.8rem;
+  }
+
+  /* Ceremonia y Celebración */
+  .ceremonia-section div,
+  .celebracion-section div {
+    width: 250px;
+    font-size: 1.3em;
+  }
+
+  .ceremonia-section a,
+  .celebracion-section a,
+  .hospedaje-section a {
+    width: 250px;
+    font-size: 1.3em;
+  }
+
+  /* Itinerario */
+  .itinerario-item img {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .texto-itinerario h3 {
+    font-size: 1.2rem;
+  }
+
+  .texto-itinerario p {
+    font-size: 1.2rem !important;
+  }
+
+  /* Galería */
+  .carousel-track img {
+    height: 130px;
+  }
+
+  /* Frase final */
+  .frase-final-section p {
+    font-size: 1.8rem;
+    max-width: 400px;
+  }
+
+  /* Hospedaje */
+  .hospedaje-section img {
+    max-width: 60%;
+  }
+
+  .hospedaje-section h3 {
+    font-size: 1.8em;
+  }
+}
