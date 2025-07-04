@@ -61,3 +61,40 @@ function prevImage() {
   currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
   document.getElementById("modalImage").src = images[currentImageIndex];
 }
+
+
+/*Toogle music*/
+const musicToggle = document.getElementById('music-toggle');
+
+musicToggle.addEventListener('click', () => {
+    window.parent.postMessage('toggle-music', '*');
+});
+
+// Escuchar cambios de estado de música enviados por el padre
+window.addEventListener('message', (event) => {
+    if (event.data === 'music-playing') {
+        musicToggle.textContent = '🎵';
+    } else if (event.data === 'music-paused') {
+        musicToggle.textContent = '🔇';
+    }
+});
+
+
+function fadeAudio(audio, from, to, duration, onComplete) {
+    const stepTime = 50;
+    const steps = duration / stepTime;
+    let currentStep = 0;
+    const volumeStep = (to - from) / steps;
+
+    audio.volume = from;
+
+    const fadeInterval = setInterval(() => {
+        currentStep++;
+        audio.volume = Math.min(Math.max(audio.volume + volumeStep, 0), 1);
+
+        if (currentStep >= steps) {
+            clearInterval(fadeInterval);
+            if (onComplete) onComplete();
+        }
+    }, stepTime);
+}
