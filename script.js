@@ -36,3 +36,14 @@ window.addEventListener('message', (event) => {
         }
     }
 });
+
+// Confeti al presionar sello
+document.getElementById('seal').addEventListener('click', () => {
+  // Lanza confeti en forma de ráfaga
+  confetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
+});
+
