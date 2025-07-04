@@ -21,6 +21,7 @@
   z-index: 5; /* Ajusta si usas otros elementos flotantes */
 }
 
+
 #music-toggle {
     position: fixed;
     bottom: 20px;
@@ -39,11 +40,13 @@
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: background 0.3s, transform 0.3s;
+    margin-bottom: 50px;
 }
 
 #music-toggle:hover {
     background: rgba(16, 59, 52, 1);
     transform: scale(1.1);
+    margin-bottom: 50px;
 }
 
 body {
