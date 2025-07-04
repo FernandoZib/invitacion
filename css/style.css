@@ -36,7 +36,7 @@ h1, h2, h3 {
 
 /* HERO */
 .hero {
-  background: url('../assets/fondo.webp') center/cover no-repeat;
+  background: url('../assets/fondo.jpg') center/cover no-repeat;
   color: white;
   padding: 5rem 1rem 6rem;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -50,6 +50,7 @@ h1, h2, h3 {
 .hero h2 {
   font-size: 2rem;
   font-weight: 300;
+  font-family: "EB Garamond";
 }
 
 .hero p {
@@ -187,7 +188,7 @@ h1, h2, h3 {
 }
 
 .hospedaje-section {
-  background: url('../assets/textura2.png') center no-repeat;
+  background: url('../assets/textura2.png') center/cover no-repeat;
   background-size: 350px, 1000px;
   background-position-y: top;
   background-color: #103b34;
@@ -235,13 +236,15 @@ h1, h2, h3 {
 }
 
 .hospedaje-section img{
-  max-width: 80%;
+  max-width: 65%;
+  margin-bottom: -8px;
 }
+
 
 .hospedaje-section h3{
   color: var(--blanco);
-  font-size: 2em;
-  margin-top: -65px;
+  font-size: 1.8em;
+  margin-top: -45px;
   margin-bottom: -10px;
   text-shadow:
         -1px -1px 0 #00674F,
@@ -262,12 +265,13 @@ section img {
 
 .ceremonia-section div,
 .celebracion-section div {
-  background-color: #103b34;
   padding: 1rem;
-  border-radius: 30px;
-  width: 220px;
+  border-radius: 50px;
+  width: 180px;
   margin: 1.5rem auto;
-  font-size: 1.5em;
+  font-size: 2em;
+  font-family: "EB Garamond", serif;
+  border: 8px solid #103b34; 
 }
 
 .ceremonia-section p,
@@ -276,23 +280,27 @@ section img {
 }
 
 .ceremonia-section a,
-.celebracion-section a,
-.hospedaje-section a {
+.celebracion-section a{
   display: inline-block;
   background-color: #103b34;
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   text-decoration: none;
-  margin-top: 1rem;
   width: 220px;
   font-size: 1.5em;
 }
 
 .hospedaje-section a {
-  background-color: white;
-  color: #103b34;
+  display: inline-block;
+  background-color: #103b34;
+  color: white;
   font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  width: 180px;
+  font-size: 1.5em;
 }
 
 .invitacion-section h2 {
@@ -497,7 +505,6 @@ section img {
 
   .hero h2 {
     font-size: 2.5rem;
-    font-family: "great vibes";
   }
 
   .hero p {
