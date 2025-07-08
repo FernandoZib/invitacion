@@ -41,16 +41,32 @@ const images = [
 let currentImageIndex = 0;
 
 function openModal(index) {
-  currentImageIndex = index;
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-  modal.style.display = "block";
-  modalImg.src = images[index];
+    currentImageIndex = index;
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = images[index];
+
+    // Agregar al historial para habilitar botón de atrás
+    history.pushState({ modalOpen: true }, null);
 }
 
+window.addEventListener("popstate", function (event) {
+    const modal = document.getElementById("imageModal");
+    if (modal.style.display === "block") {
+        closeModal();
+    }
+});
+
+
 function closeModal() {
-  document.getElementById("imageModal").style.display = "none";
+    document.getElementById("imageModal").style.display = "none";
+    // Retroceder en el historial si el modal está abierto
+    if (history.state && history.state.modalOpen) {
+        history.back();
+    }
 }
+
 
 function nextImage() {
   currentImageIndex = (currentImageIndex + 1) % images.length;
@@ -61,6 +77,14 @@ function prevImage() {
   currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
   document.getElementById("modalImage").src = images[currentImageIndex];
 }
+
+// Cerrar modal al hacer clic fuera de la imagen
+const modal = document.getElementById("imageModal");
+modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
 
 
 const track = document.querySelector('.carousel-track');
