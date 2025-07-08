@@ -74,7 +74,7 @@ h1, h2, h3 {
 
 /* HERO */
 .hero {
-  background: url('../assets/fondo.jpg') center/cover no-repeat;
+  background: url('../assets/fondo.webp') center/cover no-repeat;
   color: white;
   padding: 5rem 1rem 6rem;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -430,15 +430,15 @@ section img {
 
 .ceremonia-section img {
   margin-top: -50px;
-  border-radius: 30px;
+  border-radius: 50%;
 }
 
 
 .celebracion-section img {
-  border-radius: 30px;
+  border-radius: 50%;
 }
 
-#bordes {
+.bordes {
   border-style: solid;
   border-color: black;
 }
@@ -449,6 +449,16 @@ section img {
 .vestimenta-section h3 {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
+}
+
+.padresn{
+  display: inline-block;
+  font-size: 1.35em;
+  margin: 0 10px; /* 20px de separación horizontal */
+}
+
+.padres-section span{
+  color: var(--dorado);
 }
 
 .invitacion-section h3 {
