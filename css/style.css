@@ -680,8 +680,8 @@ section img {
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  justify-content: center; /* centrado por defecto */
 }
+
 
 
 .carousel-indicators {
