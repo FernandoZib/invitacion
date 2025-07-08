@@ -122,7 +122,7 @@ function Petalo() {
     this.opacity = 0.6 + Math.random() * 0.4;
     this.angle = Math.random() * 2 * Math.PI;
     this.spin = Math.random() * 0.02 - 0.01;
-    this.color = 'rgba(255, 182, 193,' + this.opacity + ')'; // Rosa pastel
+    this.color = 'rgba(204, 182, 130,' + this.opacity + ')'; // Rosa pastel
 }
 
 Petalo.prototype.update = function() {
