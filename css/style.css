@@ -423,24 +423,20 @@ section img {
   margin-bottom: -20px;
 }
 
-#ceremonia{
+#ceremoniaf{
   margin-top: 20px;
 }
 
 
 .ceremonia-section img {
   margin-top: -50px;
-  border-radius: 50%;
 }
 
-
-.celebracion-section img {
-  border-radius: 50%;
-}
 
 .bordes {
   border-style: solid;
   border-color: black;
+  border-radius: 50%;
 }
 
 .padres-section h3,
