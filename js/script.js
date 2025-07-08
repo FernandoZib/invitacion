@@ -63,6 +63,62 @@ function prevImage() {
 }
 
 
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const indicatorsContainer = document.querySelector('.carousel-indicators');
+let currentIndex = 0;
+
+// Crear indicadores
+slides.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('indicator');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+        resetInterval();
+    });
+    indicatorsContainer.appendChild(dot);
+});
+const indicators = Array.from(document.querySelectorAll('.carousel-indicators .indicator'));
+
+// Centrar el slide actual
+function updateCarousel() {
+    const carousel = document.querySelector('.carousel');
+    const carouselWidth = carousel.offsetWidth;
+    const slideWidth = slides[0].offsetWidth;
+    const gap = parseInt(getComputedStyle(slides[0]).marginRight) || 0;
+
+    const totalSlideWidth = slideWidth + gap;
+    const offset = (totalSlideWidth * currentIndex) + slideWidth / 2 - carouselWidth / 2;
+
+    track.style.transform = `translateX(-${offset}px)`;
+
+    indicators.forEach((indicator, idx) => {
+        indicator.classList.toggle('active', idx === currentIndex);
+    });
+}
+
+// Ajustar el tamaño al cargar
+window.addEventListener('resize', updateCarousel);
+updateCarousel();
+
+// Avanzar automáticamente cada 3 segundos
+let interval = setInterval(nextSlide, 3000);
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+}
+
+// Reset interval al hacer clic en indicador
+function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 3000);
+}
+
+
+
 /*Toogle music*/
 const musicToggle = document.getElementById('music-toggle');
 
