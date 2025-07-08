@@ -80,18 +80,17 @@ slides.forEach((_, index) => {
     });
     indicatorsContainer.appendChild(dot);
 });
+
 const indicators = Array.from(document.querySelectorAll('.carousel-indicators .indicator'));
 
-// Centrar el slide actual
 function updateCarousel() {
     const carousel = document.querySelector('.carousel');
     const carouselWidth = carousel.offsetWidth;
-    const slideWidth = slides[0].offsetWidth;
-    const gap = parseInt(getComputedStyle(slides[0]).marginRight) || 0;
+    const slide = slides[currentIndex];
+    const slideWidth = slide.offsetWidth;
+    const slideLeft = slide.offsetLeft;
 
-    const totalSlideWidth = slideWidth + gap;
-    const offset = (totalSlideWidth * currentIndex) + slideWidth / 2 - carouselWidth / 2;
-
+    const offset = Math.max(slideLeft - (carouselWidth - slideWidth) / 2, 0);
     track.style.transform = `translateX(-${offset}px)`;
 
     indicators.forEach((indicator, idx) => {
@@ -99,23 +98,28 @@ function updateCarousel() {
     });
 }
 
-// Ajustar el tamaño al cargar
+
+// Ajustar al cambiar tamaño
 window.addEventListener('resize', updateCarousel);
 updateCarousel();
 
-// Avanzar automáticamente cada 3 segundos
+// Avanza automáticamente cada 3 segundos
 let interval = setInterval(nextSlide, 3000);
 
 function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
+    currentIndex = currentIndex + 1;
+    if (currentIndex >= slides.length) {
+        currentIndex = 0;
+    }
     updateCarousel();
 }
 
-// Reset interval al hacer clic en indicador
+
 function resetInterval() {
     clearInterval(interval);
     interval = setInterval(nextSlide, 3000);
 }
+
 
 
 
