@@ -41,7 +41,9 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: background 0.3s, transform 0.3s;
     margin-bottom: 50px;
+
 }
+
 
 #music-toggle:hover {
     background: rgba(16, 59, 52, 1);
@@ -103,6 +105,13 @@ h1, h2, h3 {
   font-size: 2rem;
   font-weight: 300;
   font-family: "EB Garamond";
+}
+
+.hero h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: "EB Garamond";
+  font-weight: bold;
 }
 
 .hero p {
@@ -413,8 +422,7 @@ section img {
 }
 
 #separador2 {
-  margin-top: -10px;
-  margin-bottom: -120px;
+  margin-bottom: -70px;
 }
 
 
@@ -450,6 +458,7 @@ section img {
 .padresn{
   display: inline-block;
   font-size: 1.35em;
+  color: white;
   margin: 0 10px; /* 20px de separación horizontal */
 }
 
@@ -915,4 +924,141 @@ section img {
   .hospedaje-section h3 {
     font-size: 1.8em;
   }
+}
+
+
+
+          /* Animación */
+
+/* Animaciones base */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación hero nombres */
+#nombres {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+#nombres.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Animaciones en imágenes decorativas */
+.bordes,
+#decoracion,
+#decoracion2,
+#separadorinv,
+#separador,
+#separador2,
+#separador3,
+#anillos {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.bordes.visible,
+#decoracion.visible,
+#decoracion2.visible,
+#separadorinv.visible,
+#separador.visible,
+#separador2.visible,
+#separador3.visible,
+#anillos.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Estado inicial oculto con desplazamiento para efecto cortina */
+.itinerario-item img,
+.itinerario-item .texto-itinerario {
+  opacity: 0;
+  transition: transform 1.2s ease, opacity 1.2s ease;
+}
+
+.itinerario-item img {
+  transform: translateX(-80px); /* Desde la izquierda */
+}
+
+.itinerario-item .texto-itinerario {
+  transform: translateX(80px); /* Desde la derecha */
+
+}
+
+.itinerario-container {
+  overflow: hidden; /* Evita scroll horizontal */
+  position: relative; /* Asegura que hijos se posicionen correctamente */
+}
+
+.itinerario-item.visible img,
+.itinerario-item.visible .texto-itinerario {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+@keyframes latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(0.99);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.98);
+  }
+}
+
+/* Aplica a los elementos que tendrán efecto de latido */
+.latido {
+  animation: latido 3s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+
+/* Cursor parpadeante */
+#frase-final-texto::after {
+  content: '|';
+  animation: blink 1s infinite;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+#frase-final-texto {
+  display: inline-block;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+
+
+/*Para calmar el efecto flicker */
+html, body {
+  overflow-x: hidden;
 }
