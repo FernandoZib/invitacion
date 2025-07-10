@@ -275,11 +275,27 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(section);
   });
 
-  nombres.forEach((nombre, index) => {
-    setTimeout(() => {
-      nombre.classList.add("visible");
-    }, 500 + index * 300);
+  // NUEVO: observer para #nombres al entrar la sección .hero
+  const heroSection = document.querySelector(".hero");
+
+  const nombresObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        nombres.forEach((nombre, index) => {
+          setTimeout(() => {
+            nombre.classList.add("visible");
+          }, 500 + index * 300);
+        });
+        nombresObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3
   });
+
+  if (heroSection) {
+    nombresObserver.observe(heroSection);
+  }
 
   decorativos.forEach(element => {
     const observerDecorativos = new IntersectionObserver(entries => {
@@ -295,6 +311,7 @@ document.addEventListener("DOMContentLoaded", function() {
     observerDecorativos.observe(element);
   });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
