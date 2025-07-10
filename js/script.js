@@ -249,3 +249,189 @@ function animate() {
 
 init();
 animate();
+
+                /* Animación */
+
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = document.querySelectorAll("section");
+  const nombres = document.querySelectorAll("#nombres");
+  const decorativos = document.querySelectorAll(
+    ".bordes, #decoracion, #decoracion2, #separadorinv, #separador, #separador2, #separador3, #anillos"
+  );
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("section-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  sections.forEach(section => {
+    section.classList.add("section-hidden");
+    observer.observe(section);
+  });
+
+  nombres.forEach((nombre, index) => {
+    setTimeout(() => {
+      nombre.classList.add("visible");
+    }, 500 + index * 300);
+  });
+
+  decorativos.forEach(element => {
+    const observerDecorativos = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observerDecorativos.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    observerDecorativos.observe(element);
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const itinerarioItems = document.querySelectorAll(".itinerario-item");
+
+  const observerItinerario = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observerItinerario.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  itinerarioItems.forEach(item => {
+    observerItinerario.observe(item);
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const anillos = document.querySelectorAll("#anillos");
+  const nuestroMatrimonio = document.querySelector(".invitacion-linea h3");
+  const separador = document.querySelector("#separador");
+
+  // Aplica la clase de latido con un ligero retraso tras cargar para mayor elegancia
+  setTimeout(() => {
+    anillos.forEach(anillo => anillo.classList.add("latido"));
+    if (nuestroMatrimonio) {
+      nuestroMatrimonio.classList.add("latido");
+    }
+    if (separador) {
+      separador.classList.add("latido");
+    }
+  }, 1000);
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const fraseElemento = document.getElementById('frase-final-texto');
+  const textoOriginal = fraseElemento.innerHTML;
+  const textoPlano = textoOriginal.replace(/<br>/g, '\n').replace(/<[^>]*>/g, '');
+
+  // Crear un clon para medir altura y mantener espacio
+  const clon = fraseElemento.cloneNode(true);
+  clon.style.visibility = 'hidden';
+  clon.style.position = 'absolute';
+  clon.style.pointerEvents = 'none';
+  document.body.appendChild(clon);
+  const altura = clon.offsetHeight;
+  document.body.removeChild(clon);
+
+  fraseElemento.style.minHeight = altura + 'px';
+  fraseElemento.innerHTML = ''; // Vaciar el texto inicialmente
+
+  let index = 0;
+
+  function escribirFrase() {
+    if (index < textoPlano.length) {
+      let caracter = textoPlano.charAt(index);
+      if (caracter === '\n') {
+        fraseElemento.innerHTML += '<br>';
+      } else {
+        fraseElemento.innerHTML += caracter;
+      }
+      index++;
+      setTimeout(escribirFrase, 40);
+    } else {
+      fraseElemento.innerHTML = fraseElemento.innerHTML.replace(/\|/, '');
+    }
+  }
+
+  // IntersectionObserver para activar la animación al hacer scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        escribirFrase();
+        observer.unobserve(entry.target); // Para que solo se ejecute una vez
+      }
+    });
+  }, {
+    threshold: 0.3 // Se activa cuando al menos el 30% del elemento es visible
+  });
+
+  observer.observe(fraseElemento);
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const fraseHero = document.getElementById('hero-frase');
+  const textoOriginal = fraseHero.innerHTML;
+  const textoPlano = textoOriginal.replace(/<br>/g, '\n').replace(/<[^>]*>/g, '');
+
+  // Calcular altura
+  const clon = fraseHero.cloneNode(true);
+  clon.style.visibility = 'hidden';
+  clon.style.position = 'absolute';
+  clon.style.pointerEvents = 'none';
+  document.body.appendChild(clon);
+  const altura = clon.offsetHeight;
+  document.body.removeChild(clon);
+
+  fraseHero.style.minHeight = altura + 'px';
+  fraseHero.innerHTML = ''; // Vaciar texto inicialmente
+
+  let index = 0;
+
+  function escribirFraseHero() {
+    if (index < textoPlano.length) {
+      let caracter = textoPlano.charAt(index);
+      if (caracter === '\n') {
+        fraseHero.innerHTML += '<br>';
+      } else {
+        fraseHero.innerHTML += caracter;
+      }
+      index++;
+      setTimeout(escribirFraseHero, 40);
+    } else {
+      fraseHero.innerHTML = fraseHero.innerHTML.replace(/\|/, '');
+    }
+  }
+
+  // Activar con IntersectionObserver
+  const observerHero = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        escribirFraseHero();
+        observerHero.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observerHero.observe(fraseHero);
+});
