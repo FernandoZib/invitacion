@@ -460,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Bloquea solo imágenes con clase "bloquear"
 document.querySelectorAll('img.bloquear').forEach(img => {
   img.addEventListener('contextmenu', e => e.preventDefault());
-  img.addEventListener('touchstart', e => e.preventDefault());
+  //img.addEventListener('touchstart', e => e.preventDefault());
 });
 
 // Sigue bloqueando clic derecho general si deseas
