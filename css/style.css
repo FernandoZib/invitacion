@@ -1062,3 +1062,10 @@ section img {
 html, body {
   overflow-x: hidden;
 }
+
+
+img.bloquear {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
