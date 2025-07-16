@@ -1,49 +1,65 @@
-document.getElementById("seal").addEventListener("click", function () {
-  document.getElementById("wrapper").classList.add("open");
-  document.getElementById("seal").classList.add("hide-seal");
-});
-
 document.addEventListener('DOMContentLoaded', () => {
+    const sealImg = document.getElementById('seal-img');
+    const wrapper = document.getElementById('wrapper');
     const seal = document.getElementById('seal');
     const invitationContent = document.getElementById('invitationContent');
     const backgroundMusic = document.getElementById('background-music');
 
-    seal.addEventListener('click', () => {
-        // Mostrar invitación con animación (asumiendo ya tienes este código funcionando)
+    sealImg.addEventListener('click', () => {
+        // Abrir invitación con animación
+        wrapper.classList.add('open');
+
+        // Ocultar sello
+        seal.classList.add('hide-seal');
+
+        // Mostrar invitación con animación si tu CSS requiere esta clase
         invitationContent.classList.add('show');
 
-        // Iniciar música en el momento del click
+        // Iniciar música de fondo
         backgroundMusic.play().catch(err => {
             console.log('Error al reproducir música:', err);
         });
+
+        // Lanzar confeti
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    });
+
+    // Control de música vía postMessage
+    window.addEventListener('message', (event) => {
+        if (event.data === 'toggle-music') {
+            if (backgroundMusic.paused) {
+                fadeAudio(backgroundMusic, 0, 1, 1000);
+                backgroundMusic.play().catch(err => console.log('Error al reanudar música:', err));
+                document.querySelector('iframe').contentWindow.postMessage('music-playing', '*');
+            } else {
+                fadeAudio(backgroundMusic, 1, 0, 1000, () => backgroundMusic.pause());
+                document.querySelector('iframe').contentWindow.postMessage('music-paused', '*');
+            }
+        }
     });
 });
 
+// Fade de audio suave
+function fadeAudio(audio, from, to, duration, callback) {
+    const stepTime = 50;
+    const steps = duration / stepTime;
+    let currentStep = 0;
 
-window.addEventListener('message', (event) => {
-    const backgroundMusic = document.getElementById('background-music');
+    const volumeStep = (to - from) / steps;
+    audio.volume = from;
 
-    if (event.data === 'toggle-music') {
-        if (backgroundMusic.paused) {
-            fadeAudio(backgroundMusic, 0, 1, 1000);
-            backgroundMusic.play().catch(err => console.log('Error al reanudar música:', err));
-            // Notificar al iframe que está reproduciendo
-            document.querySelector('iframe').contentWindow.postMessage('music-playing', '*');
-        } else {
-            fadeAudio(backgroundMusic, 1, 0, 1000, () => backgroundMusic.pause());
-            // Notificar al iframe que está pausado
-            document.querySelector('iframe').contentWindow.postMessage('music-paused', '*');
+    const fade = setInterval(() => {
+        currentStep++;
+        audio.volume = Math.min(Math.max(audio.volume + volumeStep, 0), 1);
+        if (currentStep >= steps) {
+            clearInterval(fade);
+            if (callback) callback();
         }
-    }
-});
+    }, stepTime);
+}
 
-// Confeti al presionar sello
-document.getElementById('seal').addEventListener('click', () => {
-  // Lanza confeti en forma de ráfaga
-  confetti({
-    particleCount: 150,
-    spread: 70,
-    origin: { y: 0.6 }
-  });
-});
 
