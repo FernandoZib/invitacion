@@ -11,6 +11,10 @@ body, html {
   overflow: hidden;
 }
 
+h1, h3{
+  color: black;
+}
+
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -81,6 +85,8 @@ body, html {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }
   14% { transform: scale(1.2); }
@@ -99,7 +105,11 @@ body, html {
   white-space: nowrap;
   opacity: 0.85;
   transition: opacity 0.5s ease;
+  max-width: 55%; /* opcional para móviles */
+  margin: 10px auto; /* centra horizontalmente */
 }
+
+
 
 /* Contenido de invitación (iframe) */
 .invitation-content {
@@ -134,3 +144,13 @@ body, html {
   opacity: 0;
   pointer-events: none;
 }
+
+.seal {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
