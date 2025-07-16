@@ -154,3 +154,8 @@ h1, h3{
 }
 
 
+img.bloquear {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
