@@ -145,9 +145,9 @@ h1, h2, h3 {
   align-items: center;
   margin: 2rem auto;
   padding: 1.5rem 2rem;
-  border: 4px solid var(--dorado);
+  border: 6px solid var(--dorado);
   border-radius: 2rem;
-  max-width: 800px;
+  max-width: 900px;
   flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
@@ -163,16 +163,17 @@ h1, h2, h3 {
   flex-direction: column;
   align-items: center;
   min-width: 80px;
-  font-family: "EB Garamond";
+   font-family: "Xanh Mono", monospace;
 }
 
 .countdown-item span {
-  font-size: 2.8rem;
+  font-size: 7.8rem;
   color: var(--blanco);
+  padding-inline: 40px;
 }
 
 .countdown-item small {
-  font-size: 0.7rem;
+  font-size: 2rem;
   color: var(--blanco);;
   margin-top: 0.5rem;
 }
@@ -193,7 +194,7 @@ h1, h2, h3 {
 .padres-section {
   position: relative;
   z-index: 1;
-  overflow: hidden;
+  overflow: visible;
   background-color: var(--verde-esmeralda);
 }
 
@@ -201,7 +202,7 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('../assets/padres-fondo.webp') center/cover no-repeat;
+  background: url('../assets/padres-fondo.webp') center/contain  no-repeat;
   filter: brightness(0.5); /* 0.5 = más oscuro, 1 = normal, 1.5 = más brillante */
   z-index: -1;
 
@@ -249,9 +250,7 @@ h1, h2, h3 {
 }
 
 .hospedaje-section {
-  background: url('../assets/textura2.png') center/cover no-repeat;
-  background-size: 350px, 1000px;
-  background-position-y: top;
+  background: url('../assets/textura3.png') center/cover no-repeat;
   background-color: #103b34;
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -379,12 +378,11 @@ section img {
     flex-wrap: nowrap;
     /*margin: 2rem 0;*/
     margin-bottom: -30px;
-    margin-top: 30px;
+    margin-top: 30px;    
 }
 
 .invitacion-linea h3 {
     font-family: 'Ballet', cursive;
-    font-size: 3rem;
     color: var(--dorado);
     white-space: nowrap; /* Evita saltos de línea */
 }
@@ -395,6 +393,20 @@ section img {
 }
 
 @media (max-width: 600px) {
+
+  .hospedaje-section {
+  background: url('../assets/textura2.png') center/cover no-repeat;
+  background-size: 350px, 1000px;
+  background-position-y: top;
+  background-color: #103b34;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+  .invitacion-section h3 {
+  font-size: 2.8rem;
+  margin-bottom: 5%;
+}
+
     .invitacion-linea {
         flex-wrap: wrap;
     }
@@ -467,8 +479,9 @@ section img {
 }
 
 .invitacion-section h3 {
+  margin-bottom: -25%;
   font-family: 'Ballet';
-  font-size: 3rem;
+  font-size: 10rem;
   line-height: 1.1;
   letter-spacing: 2px;
   font-optical-sizing: auto;
@@ -486,7 +499,19 @@ section img {
          0    1px 0 #00674F;
 }
 
+  .ce-container {
+  overflow: hidden; /* Evita scroll horizontal */
+  position: relative; /* Asegura que hijos se posicionen correctamente */
+}
 
+.ce-container {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 50px;
+  flex-direction: column;
+  background-color: #528370;
+}
 
 /* ITINERARIO */
 .itinerario-section {
@@ -511,6 +536,7 @@ section img {
   flex-direction: column;
   background-color: #528370;
 }
+
 
 .itinerario-item {
   display: flex;
@@ -560,8 +586,9 @@ section img {
 
 /* RESPONSIVE GENERAL */
 @media (max-width: 1024px) {
+
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem;    
   }
   .countdown-section h2 {
     font-size: 2rem;
@@ -569,6 +596,32 @@ section img {
 }
 
 @media (max-width: 768px) {
+  .hospedaje-section {
+  background: url('../assets/textura2.png') center/cover no-repeat;
+  background-size: 350px, 1000px;
+  background-position-y: top;
+  background-color: #103b34;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+  .invitacion-section h3 {
+  font-size: 2.8rem;
+  margin-bottom: 5%;
+}
+
+  .ce-container {
+  overflow: hidden; /* Evita scroll horizontal */
+  position: relative; /* Asegura que hijos se posicionen correctamente */
+}
+
+.ce-container {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 50px;
+  flex-direction: column;
+  background-color: #528370;
+}
   .hero h1 {
     font-size: 2rem;
   }
@@ -681,7 +734,7 @@ section img {
   overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 700px;
   margin: 0 auto;
   background-color: #345852;
 }
@@ -826,6 +879,32 @@ section img {
    RESPONSIVE PARA TABLETS
    ======================= */
 @media (min-width: 601px) and (max-width: 1024px) {
+  .hospedaje-section {
+  background: url('../assets/textura2.png') center/cover no-repeat;
+  background-size: 350px, 1000px;
+  background-position-y: top;
+  background-color: #103b34;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+  .invitacion-section h3 {
+  font-size: 2.8rem;
+  margin-bottom: 5%;
+}
+
+  .ce-container {
+  overflow: hidden; /* Evita scroll horizontal */
+  position: relative; /* Asegura que hijos se posicionen correctamente */
+}
+
+.ce-container {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 50px;
+  flex-direction: column;
+  background-color: #528370;
+}
   /* Ajustar HERO */
   .hero h1 {
     font-size: 3rem;
