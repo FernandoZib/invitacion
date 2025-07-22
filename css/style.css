@@ -684,9 +684,11 @@ section img {
 
 /* GALERÍA */
 
-  .galeria-section {
+  .galeria-section, .galeria-section h2{
     background-color: var(--verde-esmeralda);
     color: var(--blanco);
+    font-size: 1.5em;
+    font-family:  'Great Vibes';
   }
 
 .carousel-track > .polaroid img {
@@ -777,6 +779,7 @@ section img {
   width: 150px;
   height: 170px;
   display: flex;
+  margin: 10px;
   justify-content: center; /* centra horizontal */
   align-items: center;     /* centra vertical */
   cursor: pointer;
