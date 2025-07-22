@@ -202,7 +202,7 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('../assets/padres-fondo.webp') center/contain  no-repeat;
+  background: url('../assets/padres-fondo.webp') center/cover  no-repeat;
   filter: brightness(0.5); /* 0.5 = más oscuro, 1 = normal, 1.5 = más brillante */
   z-index: -1;
 
@@ -469,7 +469,7 @@ section img {
 
 .padresn{
   display: inline-block;
-  font-size: 1.35em;
+  font-size: 1.7em;
   color: white;
   margin: 0 10px; /* 20px de separación horizontal */
 }
