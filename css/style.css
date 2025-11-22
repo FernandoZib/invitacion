@@ -264,7 +264,7 @@ h1, h2, h3 {
 
 
 .frase-final-section {
-  background: url('../assets/image.png') center/cover no-repeat;
+  background: url('../assets/image.webp') center/cover no-repeat;
   background-color: #103b34;
   color: white; 
 }
@@ -1157,3 +1157,4 @@ img.bloquear {
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
 }
+
