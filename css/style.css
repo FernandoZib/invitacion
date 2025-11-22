@@ -202,7 +202,7 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('../assets/padres-fondo.webp') center/cover  no-repeat;
+  background: url('../assets/padres-fondo1.webp') center/cover  no-repeat;
   filter: brightness(0.5); /* 0.5 = más oscuro, 1 = normal, 1.5 = más brillante */
   z-index: -1;
 
@@ -225,6 +225,7 @@ h1, h2, h3 {
 #padres-frase{
  color: var(--dorado);
  font-size: 2rem;
+ text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
 }
 
@@ -260,7 +261,7 @@ h1, h2, h3 {
 .frase-final-section {
   background: url('../assets/textura.png') center/cover no-repeat;
   background-color: #103b34;
-  color: white;
+  color: white; 
 }
 
 .frase-final-section p{
