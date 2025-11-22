@@ -259,11 +259,12 @@ h1, h2, h3 {
   background-color: #103b34;
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  margin-bottom: 1rem;
 }
 
 
 .frase-final-section {
-  background: url('../assets/textura.png') center/cover no-repeat;
+  background: url('../assets/image.png') center/cover no-repeat;
   background-color: #103b34;
   color: white; 
 }
