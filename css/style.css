@@ -234,11 +234,13 @@ h1, h2, h3 {
 .vestimenta-section {
   background-color: #528370;
   color: var(--blanco);
+  margin-top: -2.8rem;
 }
 
 .invitacion-section {
   background-color: var(--verde-esmeralda);
   color: white;
+  margin-top: -4rem;
 }
 
 #invitacion-frase{
