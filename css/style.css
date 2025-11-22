@@ -79,6 +79,8 @@ h1, h2, h3 {
   background: url('../assets/fondo.webp') center/cover no-repeat;
   color: white;
   padding: 5rem 1rem 6rem;
+  margin-top: -4rem;
+  margin-bottom: -6rem;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -89,7 +91,7 @@ h1, h2, h3 {
 
 #nombres{
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.1;
   text-shadow:
                 -2px -2px 0 #000,
                 2px -2px 0 #000,
@@ -379,7 +381,7 @@ section img {
     flex-wrap: nowrap;
     /*margin: 2rem 0;*/
     margin-bottom: -30px;
-    margin-top: 30px;    
+    margin-top: 30px;  
 }
 
 .invitacion-linea h3 {
