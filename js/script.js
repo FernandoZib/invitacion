@@ -47,8 +47,7 @@ const images = [
   "assets/galeria13.png",
   "assets/galeria15.png",
   "assets/galeria16.png",
-  "assets/galeria17.jpg",
-  "assets/galeria18.png",
+  "assets/galeria17.jpg",  
   "assets/galeria19.png",
   "assets/galeria20.png",
   "assets/galeria21.png"
@@ -481,5 +480,6 @@ document.querySelectorAll('img.bloquear').forEach(img => {
 
 // Sigue bloqueando clic derecho general si deseas
 document.addEventListener('contextmenu', e => e.preventDefault());
+
 
 
