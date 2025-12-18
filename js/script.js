@@ -31,26 +31,26 @@ updateCountdown();
 
 // Galería Modal
 const images = [
-  "assets/galeria1.jpg",
-  "assets/galeria2.jpg",
-  "assets/galeria3.jpg",
-  "assets/galeria4.jpg",
-  "assets/galeria7.png",
-  "assets/galeria11.png",
-  "assets/galeria5.jpg",
-  "assets/galeria6.png",
-  "assets/galeria8.png",
-  "assets/galeria12.png",
-  "assets/galeria10.jpg",
-  "assets/galeria14.png",
-  "assets/galeria9.jpg",
-  "assets/galeria13.png",
-  "assets/galeria15.png",
-  "assets/galeria16.png",
-  "assets/galeria17.jpg",  
-  "assets/galeria19.png",
-  "assets/galeria20.png",
-  "assets/galeria21.png"
+  "assets/galeria1.webp",
+  "assets/galeria2.webp",
+  "assets/galeria3.webp",
+  "assets/galeria4.webp",
+  "assets/galeria7.webp",
+  "assets/galeria11.webp",
+  "assets/galeria5.webp",
+  "assets/galeria6.webp",
+  "assets/galeria8.webp",
+  "assets/galeria12.webp",
+  "assets/galeria10.webp",
+  "assets/galeria14.webp",
+  "assets/galeria9.webp",
+  "assets/galeria13.webp",
+  "assets/galeria15.webp",
+  "assets/galeria16.webp",
+  "assets/galeria17.webp",  
+  "assets/galeria19.webp",
+  "assets/galeria20.webp",
+  "assets/galeria21.webp"
 ];
 
 let currentImageIndex = 0;
@@ -480,6 +480,3 @@ document.querySelectorAll('img.bloquear').forEach(img => {
 
 // Sigue bloqueando clic derecho general si deseas
 document.addEventListener('contextmenu', e => e.preventDefault());
-
-
-
