@@ -801,6 +801,7 @@ section img {
   user-select: none;
   display: block;
   margin: auto; /* esto ayuda a centrar la imagen */
+  content-visibility: auto;
 }
 
 
@@ -1157,4 +1158,5 @@ img.bloquear {
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
 }
+
 
