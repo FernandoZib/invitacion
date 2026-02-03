@@ -5,24 +5,28 @@ function updateCountdown() {
   const now = new Date().getTime();
   const distance = targetDate - now;
   
-  // Referencias a los elementos (buscamos por ID)
   const daysElement = document.getElementById("days");
   const hoursElement = document.getElementById("hours");
   const minutesElement = document.getElementById("minutes");
   const secondsElement = document.getElementById("seconds");
+  const countdownContainer = document.getElementById("countdown"); // Referencia al contenedor padre
 
-  // Si por alguna razón no encuentra los elementos, salimos para evitar errores
   if (!daysElement || !hoursElement || !minutesElement || !secondsElement) return;
 
   if (distance <= 0) {
-    daysElement.innerText = "0";
-    hoursElement.innerText = "00";
-    minutesElement.innerText = "00";
-    secondsElement.innerText = "00";
-    clearInterval(countdownInterval);
+    // 1. Detenemos el intervalo
+    clearInterval(window.countdownInterval);
+
+    // 2. Reemplazamos todo el contenido del contador por el mensaje
+    if (countdownContainer) {
+      countdownContainer.innerHTML = '<h2 class="fecha-llegada">¡Llegó el día!</h2>';
+      countdownContainer.style.display = "block"; // Asegura que se centre si usas flex
+      countdownContainer.style.textAlign = "center";
+    }
     return;
   }
 
+  // Cálculos normales...
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -491,3 +495,4 @@ document.querySelectorAll('img.bloquear').forEach(img => {
 
 // Sigue bloqueando clic derecho general si deseas
 document.addEventListener('contextmenu', e => e.preventDefault());
+
