@@ -4,13 +4,21 @@ const targetDate = new Date("2026-03-21T19:00:00-06:00").getTime();
 function updateCountdown() {
   const now = new Date().getTime();
   const distance = targetDate - now;
+  
+  // Referencias a los elementos (buscamos por ID)
+  const daysElement = document.getElementById("days");
+  const hoursElement = document.getElementById("hours");
+  const minutesElement = document.getElementById("minutes");
+  const secondsElement = document.getElementById("seconds");
+
+  // Si por alguna razón no encuentra los elementos, salimos para evitar errores
+  if (!daysElement || !hoursElement || !minutesElement || !secondsElement) return;
 
   if (distance <= 0) {
-    // Opcional: mostrar 0 o un mensaje cuando llegue la fecha
-    document.getElementById("days").innerText = "0";
-    document.getElementById("hours").innerText = "00";
-    document.getElementById("minutes").innerText = "00";
-    document.getElementById("seconds").innerText = "00";
+    daysElement.innerText = "0";
+    hoursElement.innerText = "00";
+    minutesElement.innerText = "00";
+    secondsElement.innerText = "00";
     clearInterval(countdownInterval);
     return;
   }
@@ -20,14 +28,17 @@ function updateCountdown() {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("days").innerText = days;
-  document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-  document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-  document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+  daysElement.innerText = days;
+  hoursElement.innerText = hours.toString().padStart(2, '0');
+  minutesElement.innerText = minutes.toString().padStart(2, '0');
+  secondsElement.innerText = seconds.toString().padStart(2, '0');
 }
 
-const countdownInterval = setInterval(updateCountdown, 1000);
-updateCountdown();
+// Esperamos a que el contenido del DOM (HTML) esté cargado antes de iniciar
+document.addEventListener('DOMContentLoaded', () => {
+  updateCountdown(); // Ejecutar una vez al inicio para evitar retardo de 1 seg
+  window.countdownInterval = setInterval(updateCountdown, 1000);
+});
 
 // Galería Modal
 const images = [
@@ -480,3 +491,4 @@ document.querySelectorAll('img.bloquear').forEach(img => {
 
 // Sigue bloqueando clic derecho general si deseas
 document.addEventListener('contextmenu', e => e.preventDefault());
+
